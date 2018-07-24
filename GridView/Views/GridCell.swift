@@ -60,12 +60,7 @@ public final class GridCell: UIView {
     override public func updateConstraints() {
         super.updateConstraints()
 
-        let margin: CGFloat = 3
-        backgroundView.snp
-        backgroundView.topAnchor.constraint(equalTo: topAnchor, constant: margin).isActive = true
-        backgroundView.leftAnchor.constraint(equalTo: leftAnchor, constant: margin).isActive = true
-        backgroundView.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin).isActive = true
-        backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin).isActive = true
+        backButton.snp.makeConstraints { $0.top.left.right.bottom.equalTo(3) }
     }
 
     // MARK: - Animation
