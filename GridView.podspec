@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GridView"
-  s.version          = "1.0"
+  s.version          = "1.0.1"
   s.summary          = "Jambl grid view"
   s.homepage         = "https://github.com/"
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
