@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/cornedriesprong/GridView.git", :tag => s.version }
   s.platform         = :ios, '10.0'
   s.requires_arc     = true
-  s.source_files     = 'GridView/*.swift'
+  s.source_files     = 'GridView/*'
 end
