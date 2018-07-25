@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.platform         = :ios, '10.0'
   s.requires_arc     = true
   s.source_files     = 'GridView/*'
-  s.dependency       = 'CP3Extensions'
+  s.dependency 'CP3Extensions'
 end
