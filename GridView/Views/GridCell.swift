@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CP3Extensions
 import SnapKit
 
 public final class GridCell: UIView {
@@ -45,6 +46,7 @@ public final class GridCell: UIView {
         backgroundView.backgroundColor = color
 
         addSubview(backgroundView)
+        layer.addShadow()
     }
 
     // MARK: - Layout
