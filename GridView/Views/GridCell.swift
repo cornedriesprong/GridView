@@ -18,7 +18,9 @@ public final class GridCell: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alpha = 0
         view.layer.cornerRadius = 5
+        view.clipsToBounds = false
 
+        view.layer.masksToBounds = false
         view.layer.shadowOpacity = 0.3
         view.layer.shadowOffset = CGSize(
             width: 3,
