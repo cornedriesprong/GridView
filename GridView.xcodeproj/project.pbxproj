@@ -10,7 +10,6 @@
 		412F5434206010B80000F1FE /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412F5433206010B80000F1FE /* Touch.swift */; };
 		4143381B2100A50E003F6EE8 /* GridCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4143381A2100A50E003F6EE8 /* GridCoordinate.swift */; };
 		4143381D2100A526003F6EE8 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4143381C2100A526003F6EE8 /* GridSize.swift */; };
-		41BA1CAE2107330100795F6C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BA1CAD2107330100795F6C /* SnapKit.framework */; };
 		41D03A97204047B5000B1E2B /* GridView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D03A8D204047B5000B1E2B /* GridView.framework */; };
 		41D03A9C204047B5000B1E2B /* GridViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D03A9B204047B5000B1E2B /* GridViewTests.swift */; };
 		41D03A9E204047B5000B1E2B /* GridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D03A90204047B5000B1E2B /* GridView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,7 +31,6 @@
 		412F5433206010B80000F1FE /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
 		4143381A2100A50E003F6EE8 /* GridCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinate.swift; sourceTree = "<group>"; };
 		4143381C2100A526003F6EE8 /* GridSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
-		41BA1CAD2107330100795F6C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D03A8D204047B5000B1E2B /* GridView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GridView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D03A90204047B5000B1E2B /* GridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		41D03A91204047B5000B1E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +46,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41BA1CAE2107330100795F6C /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +82,6 @@
 		41BA1CAC2107330100795F6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41BA1CAD2107330100795F6C /* SnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import CP3Extensions
-import SnapKit
 
 public final class GridCell: UIView {
 
@@ -20,6 +18,11 @@ public final class GridCell: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alpha = 0
         view.layer.cornerRadius = 5
+
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize(
+            width: 3,
+            height: 3)
 
         return view
     }()
@@ -46,7 +49,6 @@ public final class GridCell: UIView {
         backgroundView.backgroundColor = color
 
         addSubview(backgroundView)
-        layer.addShadow()
     }
 
     // MARK: - Layout
@@ -62,7 +64,10 @@ public final class GridCell: UIView {
     override public func updateConstraints() {
         super.updateConstraints()
 
-        backButton.snp.makeConstraints { $0.top.left.right.bottom.equalTo(3) }
+        backgroundView.topAnchor.constraint(equalTo: topAnchor, constant: 3).isActive = true
+        backgroundView.leftAnchor.constraint(equalTo: leftAnchor, constant: 3).isActive = true
+        backgroundView.rightAnchor.constraint(equalTo: rightAnchor, constant: -3).isActive = true
+        backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
     }
 
     // MARK: - Animation
