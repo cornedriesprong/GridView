@@ -10,10 +10,6 @@ import UIKit
 
 public final class GridCell: UIView {
 
-    // MARK: - Static properties
-
-    private static let cornerRadius: CGFloat = 17
-
     // MARK: - Private properties
 
     private lazy var backgroundView: UIView = {
@@ -21,7 +17,6 @@ public final class GridCell: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alpha = 0
-        view.layer.cornerRadius = type(of: self).cornerRadius
         view.clipsToBounds = false
 
         view.layer.shadowOpacity = 0.3
@@ -39,7 +34,6 @@ public final class GridCell: UIView {
         let gradientLayer = CAGradientLayer()
         gradientLayer.locations = [0, 1]
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.withAlphaComponent(0.1).cgColor]
-        gradientLayer.cornerRadius = type(of: self).cornerRadius
 
         return gradientLayer
     }()
@@ -74,6 +68,8 @@ public final class GridCell: UIView {
         super.layoutSubviews()
 
         backgroundGradientLayer.frame = backgroundView.frame
+        backgroundView.layer.cornerRadius = min(bounds.width, bounds.height) / 2
+        backgroundGradientLayer.cornerRadius = min(bounds.width, bounds.height) / 2
 
         setNeedsUpdateConstraints()
     }
