@@ -162,7 +162,9 @@ public final class GridView: UIView {
                     oldCoordinate != newCoordinate {
 
                     // TODO: implement propery Y coordinate offsetting
-                    cells[oldCoordinate.x][oldCoordinate.y - 1].disappearAnimation()
+
+                    let oldReversedY = (oldCoordinate.y * -1) + cells[0].count
+                    cells[oldCoordinate.x][oldReversedY].disappearAnimation()
 
                     // send stop playing event to for old coordinate (for drums AND when switching y coordinates only)
                     if sendsTouchOffs && oldCoordinate.y != newCoordinate.y {
@@ -174,7 +176,8 @@ public final class GridView: UIView {
                     let index = activeTouches.enumerated().filter({ $0.1.touch == touch })[0].0
                     activeTouches[index].coordinate = newCoordinate
 
-                    cells[newCoordinate.x][newCoordinate.y - 1].appearAnimation()
+                    let newReversedY = (newCoordinate.y * -1) + cells[0].count
+                    cells[newCoordinate.x][newReversedY].appearAnimation()
 
                     // ...and send updated touch events to Pd
                     activeTouches.forEach {
