@@ -68,8 +68,10 @@ public final class GridCell: UIView {
         super.layoutSubviews()
 
         backgroundGradientLayer.frame = backgroundView.frame
-        backgroundView.layer.cornerRadius = min(bounds.width, bounds.height) / 2
-        backgroundGradientLayer.cornerRadius = min(bounds.width, bounds.height) / 2
+
+        // set rounded corners
+        backgroundView.layer.cornerRadius = min(backgroundView.bounds.width, backgroundView.bounds.height) / 2
+        backgroundGradientLayer.cornerRadius = min(backgroundGradientLayer.bounds.width, backgroundGradientLayer.bounds.height) / 2
 
         setNeedsUpdateConstraints()
     }
