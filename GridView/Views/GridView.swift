@@ -128,10 +128,14 @@ public final class GridView: UIView {
 
             let location = touch.location(in: self)
 
+            guard let coordinate = self.coordinate(for: location) else {
+                continue
+            }
+
             let touch = Touch(
                 index: touchCount,
                 touch: touch,
-                coordinate: self.coordinate(for: location)!)
+                coordinate: coordinate)
             self.activeTouches.append(touch)
 
             touchCount += 1
