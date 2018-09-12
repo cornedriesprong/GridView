@@ -139,11 +139,6 @@ public final class GridView: UIView {
             self.activeTouches.append(touch)
 
             touchCount += 1
-
-            // animate cell
-            if let cell = cell(at: location) {
-                cell.appearAnimation()
-            }
         }
 
         // send playing data to delegate
