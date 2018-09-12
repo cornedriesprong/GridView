@@ -10,13 +10,16 @@ import UIKit
 
 public final class GridCell: UIView {
 
+    // MARK: - Static properties
+
+    static let defaultBackgroundDimension: CGFloat = 22
+
     // MARK: - Private properties
 
     private lazy var backgroundView: UIView = {
 
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.alpha = 0
         view.clipsToBounds = false
         view.isUserInteractionEnabled = false
 
@@ -65,8 +68,8 @@ public final class GridCell: UIView {
 
         addSubview(backgroundView)
 
-        widthConstraint = backgroundView.widthAnchor.constraint(equalToConstant: bounds.width)
-        heightConstraint = backgroundView.heightAnchor.constraint(equalToConstant: bounds.height)
+        widthConstraint = backgroundView.widthAnchor.constraint(equalToConstant: type(of: self).defaultBackgroundDimension)
+        heightConstraint = backgroundView.heightAnchor.constraint(equalToConstant: type(of: self).defaultBackgroundDimension)
         widthConstraint?.isActive = true
         heightConstraint?.isActive = true
 
