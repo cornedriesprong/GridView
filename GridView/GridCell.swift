@@ -12,7 +12,7 @@ public final class GridCell: UIView {
 
     // MARK: - Static properties
 
-    static let defaultBackgroundDimension: CGFloat = 22
+    static let defaultBackgroundDimension: CGFloat = 10
 
     // MARK: - Private properties
 
@@ -97,15 +97,9 @@ public final class GridCell: UIView {
         duration: TimeInterval = 0.25, andDelay
         delay: TimeInterval = 0) {
 
-//        guard backgroundView.alpha != 1 else {
-//            return
-//        }
-
-//        backgroundView.backgroundColor = color
-//        self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
-
-        widthConstraint?.constant = bounds.width
-        heightConstraint?.constant = bounds.height
+        let margin: CGFloat = 3
+        widthConstraint?.constant = bounds.width - (margin * 2)
+        heightConstraint?.constant = bounds.height - (margin * 2)
 
         UIView.animate(
             withDuration: duration,
@@ -113,62 +107,31 @@ public final class GridCell: UIView {
             options: [.curveEaseOut, .allowUserInteraction],
             animations: {
                 self.layoutIfNeeded()
-//                self.backgroundView.alpha = 1
-//                self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
         })
     }
 
     func disappear(animated: Bool = true) {
 
-//        guard backgroundView.alpha != 0 else {
-//            return
-//        }
-
-        widthConstraint?.constant = 22
-        heightConstraint?.constant = 22
+        widthConstraint?.constant = type(of: self).defaultBackgroundDimension
+        heightConstraint?.constant = type(of: self).defaultBackgroundDimension
 
         UIView.animate(
             withDuration: animated ? 0.25 : 0,
             delay: 0,
             options: [.curveEaseOut, .allowUserInteraction],
             animations: {
-//                self.backgroundView.alpha = 0
                 self.layoutIfNeeded()
         })
     }
 
     func pulseAnimation() {
 
-//        backgroundView.alpha = 1
-
-//        let scale: CGFloat = 0.7
-//        self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
-
-//        widthConstraint?.constant = 22
-//        heightConstraint?.constant = 22
-
-
-
-        widthConstraint?.constant = bounds.width
-        heightConstraint?.constant = bounds.height
+        let margin: CGFloat = 3
+        widthConstraint?.constant = bounds.width - (margin * 2)
+        heightConstraint?.constant = bounds.height - (margin * 2)
 
         layoutIfNeeded()
 
         disappear()
-
-//        UIView.animate(
-//            withDuration: 0.25,
-//            delay: 0,
-//            options: [.curveEaseOut, .allowUserInteraction],
-//            animations: {
-//                self.layoutIfNeeded()
-////                let scale: CGFloat = 1
-////                self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
-//        }, completion: { [weak self] hasCompleted in
-//            // fade out
-//            if hasCompleted {
-//                self?.disappear()
-//            }
-//        })
     }
 }
