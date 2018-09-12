@@ -16,8 +16,9 @@ public final class GridCell: UIView {
 
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.alpha = 0
+//        view.alpha = 0
         view.clipsToBounds = false
+        view.isUserInteractionEnabled = false
 
         view.layer.shadowOpacity = 0.3
         view.layer.shadowOffset = CGSize(
@@ -40,6 +41,9 @@ public final class GridCell: UIView {
 
     private let color: UIColor
 
+    private var widthConstraint: NSLayoutConstraint?
+    private var heightConstraint: NSLayoutConstraint?
+
     // MARK: - Initialization
 
     init(color: UIColor) {
@@ -60,6 +64,14 @@ public final class GridCell: UIView {
         backgroundView.backgroundColor = color
 
         addSubview(backgroundView)
+
+        widthConstraint = backgroundView.widthAnchor.constraint(equalToConstant: bounds.width)
+        heightConstraint = backgroundView.heightAnchor.constraint(equalToConstant: bounds.height)
+        widthConstraint?.isActive = true
+        heightConstraint?.isActive = true
+
+        backgroundView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        backgroundView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
 
     // MARK: - Layout
@@ -76,76 +88,84 @@ public final class GridCell: UIView {
         setNeedsUpdateConstraints()
     }
 
-    // MARK: - Constraints
-
-    override public func updateConstraints() {
-        super.updateConstraints()
-
-        backgroundView.topAnchor.constraint(equalTo: topAnchor, constant: 3).isActive = true
-        backgroundView.leftAnchor.constraint(equalTo: leftAnchor, constant: 3).isActive = true
-        backgroundView.rightAnchor.constraint(equalTo: rightAnchor, constant: -3).isActive = true
-        backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
-    }
-
     // MARK: - Animation
 
     func appearAnimation(withDuration
         duration: TimeInterval = 0.25, andDelay
         delay: TimeInterval = 0) {
 
-        guard backgroundView.alpha != 1 else {
-            return
-        }
+//        guard backgroundView.alpha != 1 else {
+//            return
+//        }
 
-        backgroundView.backgroundColor = color
-        self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
+//        backgroundView.backgroundColor = color
+//        self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
+
+        widthConstraint?.constant = bounds.width
+        heightConstraint?.constant = bounds.height
 
         UIView.animate(
             withDuration: duration,
             delay: delay,
             options: [.curveEaseOut, .allowUserInteraction],
             animations: {
-                self.backgroundView.alpha = 1
-                self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+                self.layoutIfNeeded()
+//                self.backgroundView.alpha = 1
+//                self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
         })
     }
 
-    func disappearAnimation(withDuration
-        duration: TimeInterval = 0.25, andDelay
-        delay: TimeInterval = 0) {
+    func disappear(animated: Bool = true) {
 
-        guard backgroundView.alpha != 0 else {
-            return
-        }
+//        guard backgroundView.alpha != 0 else {
+//            return
+//        }
+
+        widthConstraint?.constant = 22
+        heightConstraint?.constant = 22
 
         UIView.animate(
-            withDuration: duration,
-            delay: delay,
+            withDuration: animated ? 0.25 : 0,
+            delay: 0,
             options: [.curveEaseOut, .allowUserInteraction],
             animations: {
-                self.backgroundView.alpha = 0
+//                self.backgroundView.alpha = 0
+                self.layoutIfNeeded()
         })
     }
 
     func pulseAnimation() {
 
-        backgroundView.alpha = 1
+//        backgroundView.alpha = 1
 
-        let scale: CGFloat = 0.7
-        self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
+//        let scale: CGFloat = 0.7
+//        self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
 
-        UIView.animate(
-            withDuration: 0.25,
-            delay: 0,
-            options: [.curveEaseOut, .allowUserInteraction],
-            animations: {
-                let scale: CGFloat = 1
-                self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
-        }, completion: { [weak self] hasCompleted in
-            // fade out
-            if hasCompleted {
-                self?.disappearAnimation()
-            }
-        })
+//        widthConstraint?.constant = 22
+//        heightConstraint?.constant = 22
+
+
+
+        widthConstraint?.constant = bounds.width
+        heightConstraint?.constant = bounds.height
+
+        layoutIfNeeded()
+
+        disappear()
+
+//        UIView.animate(
+//            withDuration: 0.25,
+//            delay: 0,
+//            options: [.curveEaseOut, .allowUserInteraction],
+//            animations: {
+//                self.layoutIfNeeded()
+////                let scale: CGFloat = 1
+////                self.backgroundView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
+//        }, completion: { [weak self] hasCompleted in
+//            // fade out
+//            if hasCompleted {
+//                self?.disappear()
+//            }
+//        })
     }
 }
