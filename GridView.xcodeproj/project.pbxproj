@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		412F5434206010B80000F1FE /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412F5433206010B80000F1FE /* Touch.swift */; };
-		4143381B2100A50E003F6EE8 /* GridCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4143381A2100A50E003F6EE8 /* GridCoordinate.swift */; };
-		4143381D2100A526003F6EE8 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4143381C2100A526003F6EE8 /* GridSize.swift */; };
+		4171AF1621493F7800A9E3F3 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171AF1321493F7800A9E3F3 /* GridSize.swift */; };
+		4171AF1721493F7800A9E3F3 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171AF1421493F7800A9E3F3 /* GridCell.swift */; };
+		4171AF1821493F7800A9E3F3 /* GridCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171AF1521493F7800A9E3F3 /* GridCoordinate.swift */; };
+		4171AF1A21493F8A00A9E3F3 /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171AF1921493F8A00A9E3F3 /* Touch.swift */; };
+		4171AF1C21493F9200A9E3F3 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171AF1B21493F9200A9E3F3 /* GridView.swift */; };
 		41D03A97204047B5000B1E2B /* GridView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D03A8D204047B5000B1E2B /* GridView.framework */; };
 		41D03A9C204047B5000B1E2B /* GridViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D03A9B204047B5000B1E2B /* GridViewTests.swift */; };
 		41D03A9E204047B5000B1E2B /* GridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D03A90204047B5000B1E2B /* GridView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41D03AA820404803000B1E2B /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D03AA720404803000B1E2B /* GridView.swift */; };
-		41D03AAA2040481B000B1E2B /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D03AA92040481B000B1E2B /* GridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,17 +28,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		412F5433206010B80000F1FE /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
-		4143381A2100A50E003F6EE8 /* GridCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinate.swift; sourceTree = "<group>"; };
-		4143381C2100A526003F6EE8 /* GridSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
+		4171AF1321493F7800A9E3F3 /* GridSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridSize.swift; path = GridView/GridSize.swift; sourceTree = SOURCE_ROOT; };
+		4171AF1421493F7800A9E3F3 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridCell.swift; path = GridView/Views/GridCell.swift; sourceTree = SOURCE_ROOT; };
+		4171AF1521493F7800A9E3F3 /* GridCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridCoordinate.swift; path = GridView/GridCoordinate.swift; sourceTree = SOURCE_ROOT; };
+		4171AF1921493F8A00A9E3F3 /* Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Touch.swift; path = GridView/Touch.swift; sourceTree = SOURCE_ROOT; };
+		4171AF1B21493F9200A9E3F3 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridView.swift; path = GridView/GridView.swift; sourceTree = SOURCE_ROOT; };
 		41D03A8D204047B5000B1E2B /* GridView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GridView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D03A90204047B5000B1E2B /* GridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		41D03A91204047B5000B1E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41D03A96204047B5000B1E2B /* GridViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D03A9B204047B5000B1E2B /* GridViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewTests.swift; sourceTree = "<group>"; };
 		41D03A9D204047B5000B1E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41D03AA720404803000B1E2B /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
-		41D03AA92040481B000B1E2B /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,9 @@
 		4143381E2100A53A003F6EE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				412F5433206010B80000F1FE /* Touch.swift */,
-				4143381A2100A50E003F6EE8 /* GridCoordinate.swift */,
-				4143381C2100A526003F6EE8 /* GridSize.swift */,
+				4171AF1921493F8A00A9E3F3 /* Touch.swift */,
+				4171AF1521493F7800A9E3F3 /* GridCoordinate.swift */,
+				4171AF1321493F7800A9E3F3 /* GridSize.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -73,8 +73,8 @@
 		4143381F2100A54B003F6EE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				41D03AA720404803000B1E2B /* GridView.swift */,
-				41D03AA92040481B000B1E2B /* GridCell.swift */,
+				4171AF1B21493F9200A9E3F3 /* GridView.swift */,
+				4171AF1421493F7800A9E3F3 /* GridCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,11 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4143381D2100A526003F6EE8 /* GridSize.swift in Sources */,
-				412F5434206010B80000F1FE /* Touch.swift in Sources */,
-				4143381B2100A50E003F6EE8 /* GridCoordinate.swift in Sources */,
-				41D03AA820404803000B1E2B /* GridView.swift in Sources */,
-				41D03AAA2040481B000B1E2B /* GridCell.swift in Sources */,
+				4171AF1621493F7800A9E3F3 /* GridSize.swift in Sources */,
+				4171AF1A21493F8A00A9E3F3 /* Touch.swift in Sources */,
+				4171AF1721493F7800A9E3F3 /* GridCell.swift in Sources */,
+				4171AF1821493F7800A9E3F3 /* GridCoordinate.swift in Sources */,
+				4171AF1C21493F9200A9E3F3 /* GridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
