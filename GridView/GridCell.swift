@@ -75,14 +75,14 @@ public final class GridCell: UIView {
 
         backgroundView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         backgroundView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+
+        backgroundGradientLayer.frame = backgroundView.frame
     }
 
     // MARK: - Layout
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-
-        backgroundGradientLayer.frame = backgroundView.frame
 
         // set rounded corners
         backgroundView.layer.cornerRadius = min(backgroundView.bounds.width, backgroundView.bounds.height) / 2
