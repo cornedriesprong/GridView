@@ -97,6 +97,11 @@ public final class GridCell: UIView {
         duration: TimeInterval = 0.25, andDelay
         delay: TimeInterval = 0) {
 
+        // check whether view is already animating
+        guard backgroundView.layer.animationKeys()?.count == 0 else {
+            return
+        }
+
         let margin: CGFloat = 3
         widthConstraint?.constant = bounds.width - (margin * 2)
         heightConstraint?.constant = bounds.height - (margin * 2)
@@ -112,6 +117,11 @@ public final class GridCell: UIView {
 
     func disappear(animated: Bool = true) {
 
+        // check whether view is already animating
+        guard backgroundView.layer.animationKeys()?.count == 0 else {
+            return
+        }
+
         widthConstraint?.constant = type(of: self).defaultBackgroundDimension
         heightConstraint?.constant = type(of: self).defaultBackgroundDimension
 
@@ -125,6 +135,11 @@ public final class GridCell: UIView {
     }
 
     func pulseAnimation() {
+
+        // check whether view is already animating
+        guard backgroundView.layer.animationKeys()?.count == 0 else {
+            return
+        }
 
         let margin: CGFloat = 3
         widthConstraint?.constant = bounds.width - (margin * 2)
