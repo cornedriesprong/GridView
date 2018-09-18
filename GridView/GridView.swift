@@ -175,9 +175,6 @@ public final class GridView: UIView {
                     let index = activeTouches.enumerated().filter({ $0.1.touch == touch })[0].0
                     activeTouches[index].coordinate = newCoordinate
 
-                    let newReversedY = (newCoordinate.y * -1) + cells[0].count
-                    cells[newCoordinate.x][newReversedY].appearAnimation()
-
                     // ...and send updated touch events to Pd
                     activeTouches.forEach {
                         self.delegate?.play(forTouchWithIndex: $0.index, atCoordinate: $0.coordinate)

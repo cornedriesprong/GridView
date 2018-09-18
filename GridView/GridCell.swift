@@ -91,25 +91,6 @@ public final class GridCell: UIView {
         setNeedsUpdateConstraints()
     }
 
-    // MARK: - Animation
-
-    func appearAnimation(withDuration
-        duration: TimeInterval = 0.25, andDelay
-        delay: TimeInterval = 0) {
-
-        let margin: CGFloat = 3
-        widthConstraint?.constant = bounds.width - (margin * 2)
-        heightConstraint?.constant = bounds.height - (margin * 2)
-
-        UIView.animate(
-            withDuration: duration,
-            delay: delay,
-            options: [.curveEaseOut, .allowUserInteraction],
-            animations: {
-                self.layoutIfNeeded()
-        })
-    }
-
     func disappear(animated: Bool = true) {
 
         widthConstraint?.constant = type(of: self).defaultBackgroundDimension
@@ -125,6 +106,8 @@ public final class GridCell: UIView {
     }
 
     func pulseAnimation() {
+
+        backgroundView.layer.removeAllAnimations()
 
         let margin: CGFloat = 3
         widthConstraint?.constant = bounds.width - (margin * 2)
