@@ -12,7 +12,7 @@ public final class GridCell: UIView {
 
     // MARK: - Static properties
 
-    static let defaultBackgroundDimension: CGFloat = 10
+    static let defaultBackgroundDimension: CGFloat = 15
 
     // MARK: - Private properties
 
@@ -87,8 +87,6 @@ public final class GridCell: UIView {
         // set rounded corners
         backgroundView.layer.cornerRadius = min(backgroundView.bounds.width, backgroundView.bounds.height) / 2
         backgroundGradientLayer.cornerRadius = min(backgroundGradientLayer.bounds.width, backgroundGradientLayer.bounds.height) / 2
-
-        setNeedsUpdateConstraints()
     }
 
     func disappear(animated: Bool = true) {
